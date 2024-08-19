@@ -1,0 +1,110 @@
+.chatList {
+    flex: 1;
+    overflow: scroll;
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+  
+      .searchBar {
+        flex: 1;
+        background-color: rgba(17, 25, 40, 0.5);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-radius: 10px;
+        padding: 10px;
+  
+        input {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: white;
+          flex: 1;
+        }
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+  
+      .add {
+        width: 36px;
+        height: 36px;
+        background-color: rgba(17, 25, 40, 0.5);
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      cursor: pointer;
+      border-bottom: 1px solid #dddddd35;
+  
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+  
+      .texts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        span {
+          font-weight: 500;
+        }
+  
+        p {
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+  }  
+/*j*/
+enter in chatList.css at /* & chat.css
+
+/* General styling for the chatList div */
+.chatList {
+    flex: 1;
+    overflow: auto; /* Show scrollbars only when needed */
+    height: 100%; /* Ensure the div has height to show scrollbars */
+    position: relative; /* Required for positioning the pseudo-elements */
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.chatList::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    opacity: 0; /* Make scrollbar invisible by default */
+    transition: opacity 0.3s; /* Smooth transition effect */
+}
+
+.chatList::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Subtle background for the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+.chatList::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    transition: background 0.3s ease; /* Smooth transition on hover */
+}
+
+.chatList::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5); /* Darker thumb on hover */
+}
+
+/* Show scrollbar when scrolling or hovering */
+.chatList:hover::-webkit-scrollbar {
+    opacity: 1; /* Show scrollbar when hovering over the div */
+}
